@@ -6,4 +6,4 @@ AM_CFLAGS = $(GUI_CFLAGS) \
 
 qwertickle_LDADD = $(GUI_LIBS)
 
-qwertickle_soruce = qwertickle.c qwertickle.h
+qwertickle_SOURCES = qwertickle.c qwertickle.h

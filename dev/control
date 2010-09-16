@@ -2,12 +2,12 @@ Source: qwertickle
 Section: misc
 Priority: extra
 Maintainer: Wei-Ning Huang (AZ) <aitjcize@gmail.com>
-Build-Depends: cdbs, debhelper (>= 7), autotools-dev, libgtk2.0-dev, libglib2.0-dev, libXtst-dev, libgstreamer0.10-dev
+Build-Depends: cdbs, debhelper (>= 7), autotools-dev, libgtk2.0-dev, libglib2.0-dev, libxtst-dev, libgstreamer0.10-dev
 Standards-Version: 3.8.3
 Homepage: http://github.com/Aitjcize/Qwertickle
 
 Package: qwertickle
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk2.0-0, libglib2.0-0, libXtst6, libgstreamer0.10-0
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk2.0-0, libglib2.0-0, libxtst6, libgstreamer0.10-0
 Description: A typewriter sound scheme for your keyboard
  Qwertickle is a Linux clone of Qwertick (http://www.nattyware.com/qwertick.php) by Nattyware, written by Gtk+ and Gstreamer.

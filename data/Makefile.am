@@ -13,7 +13,7 @@ sounds_DATA = typewriter-backspace.mp3 \
 	      typewriter-return.mp3 \
 	      typewriter-space-bar.mp3
 
-EXTRA_DIST = $(desktop_DATA) \
+EXTRA_DIST = $(PACKAGE).desktop.in \
 	     $(pixmaps_DATA) \
 	     $(images_DATA) \
 	     $(sounds_DATA)

@@ -45,8 +45,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-qwertickle_SOURCES = qwertickle.c
-qwertickle_OBJECTS = qwertickle.$(OBJEXT)
+am_qwertickle_OBJECTS = qwertickle.$(OBJEXT)
+qwertickle_OBJECTS = $(am_qwertickle_OBJECTS)
 am__DEPENDENCIES_1 =
 qwertickle_DEPENDENCIES = $(am__DEPENDENCIES_1)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
@@ -57,8 +57,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = qwertickle.c
-DIST_SOURCES = qwertickle.c
+SOURCES = $(qwertickle_SOURCES)
+DIST_SOURCES = $(qwertickle_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -166,7 +166,7 @@ AM_CFLAGS = $(GUI_CFLAGS) \
 	    -DDATADIR=\"$(datadir)/$(PACKAGE)\"
 
 qwertickle_LDADD = $(GUI_LIBS)
-qwertickle_soruce = qwertickle.c qwertickle.h
+qwertickle_SOURCES = qwertickle.c qwertickle.h
 all: all-am
 
 .SUFFIXES:

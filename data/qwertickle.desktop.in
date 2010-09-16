@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=@PACKAGE_VERSION@
+Name=@PACKAGE_NAME@
+GenericName=A typewriter sound scheme for your keyboard
+Comment=A typewriter sound scheme for your keyboard
+Exec=@PACKAGE@
+Icon=@PACKAGE@
+Terminal=false
+Type=Application
+Categories=Misc;
+StartupNotify=true

@@ -51,7 +51,12 @@
 "\n" \
 "You should have received a copy of the GNU General Public License\n" \
 "along with this program; if not, write to the Free Software Foundation,\n" \
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n"
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n" \
+"\n" \
+"\n" \
+"The sound effect used in this program is from\n" \
+"http://www.soundjay.com ,\n" \
+"any form of redistribution is not allowed\n"
 
 typedef struct _QwertickleGUI {
   GtkStatusIcon* statusicon;

@@ -7,5 +7,4 @@ Exec=qwertickle
 Icon=qwertickle
 Terminal=false
 Type=Application
-Categories=Misc;
-StartupNotify=true
+Categories=Audio;

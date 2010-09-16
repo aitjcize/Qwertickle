@@ -7,5 +7,4 @@ Exec=@PACKAGE@
 Icon=@PACKAGE@
 Terminal=false
 Type=Application
-Categories=Misc;
-StartupNotify=true
+Categories=AudioVideo;

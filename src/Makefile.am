@@ -1,7 +1,7 @@
 bin_PROGRAMS = qwertickle
 
 AM_CFLAGS = $(GUI_CFLAGS) \
-	    -dynamic -Wall -O2 \
+	    -Wall -O2 \
 	    -DDATADIR=\"$(datadir)/$(PACKAGE)\"
 
 qwertickle_LDADD = $(GUI_LIBS)

@@ -174,12 +174,15 @@ void* intercept_key_thread(void* data) {
 
   if (!(rc = XRecordCreateContext(dpy, 0, &rcs, 1, &rr, 1))) {
     printf("XRecordCreateContext error\n");
+    XCloseDisplay(dpy);
     exit(1);
   }
   if (!XRecordEnableContext(dpy, rc, key_pressed_cb, data)) {
     printf("XRecordEnableContextAsync error\n");
+    XCloseDisplay(dpy);
     exit(1);
   }
+  XCloseDisplay(dpy);
   pthread_exit(0);
   return 0;
 }

@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.65])
-AC_INIT([Qwertickle], [0.1.0], [aitjcize@gmail.com], [qwertickle], [http://github.com/Aitjcize/Qwertickle])
+AC_INIT([Qwertickle], [0.1.1], [aitjcize@gmail.com], [qwertickle], [http://github.com/Aitjcize/Qwertickle])
 AM_INIT_AUTOMAKE([foreign -Wall -Werror])
 AC_CONFIG_SRCDIR([src/qwertickle.c])
 AC_CONFIG_HEADERS([config.h])

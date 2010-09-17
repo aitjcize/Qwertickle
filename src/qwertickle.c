@@ -200,12 +200,15 @@ void key_pressed_cb(XPointer arg, XRecordInterceptData *d) {
   if (stop_thread) {
     if (!XRecordDisableContext(dpy, rc)) {
       printf("XRecordDisableContext error\n");
+      XCloseDisplay(dpy);
       exit(1);
     }
     if (!XRecordFreeContext(dpy, rc)) {
       printf("XRecordFreeContext error\n");
+      XCloseDisplay(dpy);
       exit(1);
     }
+    XCloseDisplay(dpy);
     pthread_exit(0);
   }
 

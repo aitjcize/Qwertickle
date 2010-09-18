@@ -165,22 +165,20 @@ void* intercept_key_thread(void* data) {
   dpy = XOpenDisplay(0);
 
   if (!(rr = XRecordAllocRange())) {
-    printf("XRecordAllocRange error\n");
-    exit(1);
+    fprintf(stderr, "XRecordAllocRange error\n");
+    pthread_exit(0);
   }
   rr->device_events.first = KeyPress;
   rr->device_events.last = MotionNotify;
   rcs = XRecordAllClients;
 
   if (!(rc = XRecordCreateContext(dpy, 0, &rcs, 1, &rr, 1))) {
-    printf("XRecordCreateContext error\n");
-    XCloseDisplay(dpy);
-    exit(1);
+    fprintf(stderr, "XRecordCreateContext error\n");
+    exit(0);
   }
   if (!XRecordEnableContext(dpy, rc, key_pressed_cb, data)) {
-    printf("XRecordEnableContextAsync error\n");
-    XCloseDisplay(dpy);
-    exit(1);
+    fprintf(stderr, "XRecordEnableContextAsync error\n");
+    exit(0);
   }
   XCloseDisplay(dpy);
   pthread_exit(0);
@@ -191,7 +189,7 @@ void stop_intercept_key_thread(void) {
   void* result;
   stop_thread = TRUE;
   if (0 != pthread_join(thread, &result)) {
-    printf("pthread_join error\n");
+    fprintf(stderr, "pthread_join error\n");
     exit(1);
   }
 }
@@ -199,16 +197,13 @@ void stop_intercept_key_thread(void) {
 void key_pressed_cb(XPointer arg, XRecordInterceptData *d) {
   if (stop_thread) {
     if (!XRecordDisableContext(dpy, rc)) {
-      printf("XRecordDisableContext error\n");
-      XCloseDisplay(dpy);
-      exit(1);
+      fprintf(stderr, "XRecordDisableContext error\n");
+      exit(0);
     }
     if (!XRecordFreeContext(dpy, rc)) {
-      printf("XRecordFreeContext error\n");
-      XCloseDisplay(dpy);
-      exit(1);
+      fprintf(stderr, "XRecordFreeContext error\n");
+      exit(0);
     }
-    XCloseDisplay(dpy);
     pthread_exit(0);
   }
 

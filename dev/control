@@ -8,6 +8,6 @@ Homepage: http://github.com/Aitjcize/Qwertickle
 
 Package: qwertickle
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk2.0-0, libglib2.0-0, libxtst6, libgstreamer0.10-0, gstreamer0.10-plugins-base
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk2.0-0, libglib2.0-0, libxtst6, libgstreamer0.10-0, gstreamer0.10-ffmpeg
 Description: A typewriter sound scheme for your keyboard
  Qwertickle is a Linux clone of Qwertick (http://www.nattyware.com/qwertick.php) by Nattyware, written by Gtk+ and Gstreamer.

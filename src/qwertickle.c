@@ -166,7 +166,7 @@ void* intercept_key_thread(void* data) {
 
   if (!(rr = XRecordAllocRange())) {
     fprintf(stderr, "XRecordAllocRange error\n");
-    pthread_exit(0);
+    exit(1);
   }
   rr->device_events.first = KeyPress;
   rr->device_events.last = MotionNotify;
@@ -174,11 +174,11 @@ void* intercept_key_thread(void* data) {
 
   if (!(rc = XRecordCreateContext(dpy, 0, &rcs, 1, &rr, 1))) {
     fprintf(stderr, "XRecordCreateContext error\n");
-    exit(0);
+    exit(1);
   }
   if (!XRecordEnableContext(dpy, rc, key_pressed_cb, data)) {
     fprintf(stderr, "XRecordEnableContextAsync error\n");
-    exit(0);
+    exit(1);
   }
   XCloseDisplay(dpy);
   pthread_exit(0);
@@ -198,11 +198,11 @@ void key_pressed_cb(XPointer arg, XRecordInterceptData *d) {
   if (stop_thread) {
     if (!XRecordDisableContext(dpy, rc)) {
       fprintf(stderr, "XRecordDisableContext error\n");
-      exit(0);
+      exit(1);
     }
     if (!XRecordFreeContext(dpy, rc)) {
       fprintf(stderr, "XRecordFreeContext error\n");
-      exit(0);
+      exit(1);
     }
     pthread_exit(0);
   }

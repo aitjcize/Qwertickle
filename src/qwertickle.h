@@ -56,7 +56,7 @@
 "\n" \
 "The sound effect used in this program is from\n" \
 "http://www.soundjay.com ,\n" \
-"any form of redistribution is not allowed\n"
+"any form of redistribution is prohibited.\n"
 
 typedef struct _QwertickleGUI {
   GtkStatusIcon* statusicon;

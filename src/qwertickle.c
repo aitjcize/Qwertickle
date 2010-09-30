@@ -180,8 +180,6 @@ void* intercept_key_thread(void* data) {
     fprintf(stderr, "XRecordEnableContextAsync error\n");
     exit(1);
   }
-  XCloseDisplay(dpy);
-  pthread_exit(0);
   return 0;
 }
 

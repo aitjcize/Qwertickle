@@ -83,6 +83,11 @@ int main(int argc, char *argv[])
 
   gtk_widget_show_all(GTK_WIDGET(gui->mainmenu));
 
+  /* Fix freezing bug? close stdout and stdin so Xorg won't have to process
+   * the input to stdout when program exit*/
+  close(stdout);
+  close(stdin);
+
   pthread_create(&thread, NULL, intercept_key_thread, gui->play);
   gtk_main();
 

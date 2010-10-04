@@ -176,8 +176,9 @@ void* intercept_key_thread(void* data) {
     fprintf(stderr, "XRecordCreateContext error\n");
     exit(1);
   }
+  XFree(rr);
   if (!XRecordEnableContext(dpy, rc, key_pressed_cb, data)) {
-    fprintf(stderr, "XRecordEnableContextAsync error\n");
+    fprintf(stderr, "XRecordEnableContext error\n");
     exit(1);
   }
   return 0;

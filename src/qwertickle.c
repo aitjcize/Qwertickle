@@ -33,10 +33,10 @@
 #include "qwertickle.h"
 
 const gchar* uris[] = {
- "file://"DATADIR"/typewriter-key.mp3",
- "file://"DATADIR"/typewriter-return.mp3",
- "file://"DATADIR"/typewriter-space-bar.mp3",
- "file://"DATADIR"/typewriter-backspace.mp3"
+  "file://"DATADIR"/typewriter-key.mp3",
+  "file://"DATADIR"/typewriter-return.mp3",
+  "file://"DATADIR"/typewriter-space-bar.mp3",
+  "file://"DATADIR"/typewriter-backspace.mp3"
 };
 
 /* global variables */
@@ -94,7 +94,6 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-
 void on_menu_pop(GtkStatusIcon* widget, guint b, guint time, gpointer data) {
   QwertickleGUI* gui = (QwertickleGUI*)data;
   gtk_menu_popup(gui->mainmenu, NULL, NULL, NULL, NULL, b, time);
@@ -106,24 +105,24 @@ void on_quit_activate(GtkImageMenuItem* widget, gpointer data) {
 }
 
 void on_about_activate(GtkImageMenuItem* widget, gpointer data) {
-    GError* err = NULL;
-    GdkPixbuf* icon = gdk_pixbuf_new_from_file_at_size
-        (DATADIR"/qwertickle.png", 100, 100, &err);
-    const gchar* authors[] = { "Wei-Ning Huang\n<aitjcize@gmail.com>\n", NULL};
+  GError* err = NULL;
+  GdkPixbuf* icon = gdk_pixbuf_new_from_file_at_size
+    (DATADIR"/qwertickle.png", 100, 100, &err);
+  const gchar* authors[] = { "Wei-Ning Huang\n<aitjcize@gmail.com>\n", NULL};
 
-    GtkAboutDialog* dialog = GTK_ABOUT_DIALOG(gtk_about_dialog_new());
-    gtk_window_set_icon_from_file(
-        GTK_WINDOW(dialog), DATADIR"/qwertickle.png", &err);
-    gtk_about_dialog_set_authors(dialog, authors);
-    gtk_about_dialog_set_program_name(dialog, PACKAGE_NAME);
-    gtk_about_dialog_set_version(dialog, PACKAGE_VERSION);
-    gtk_about_dialog_set_website(dialog, PACKAGE_URL);
-    gtk_about_dialog_set_copyright(dialog, PACKAGE_COPYRIGHT);
-    gtk_about_dialog_set_license(dialog, PACKAGE_LICENSE);
-    gtk_about_dialog_set_logo(dialog, icon);
-    gtk_about_dialog_set_comments(dialog, PACKAGE_COMMENTS);
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(GTK_WIDGET(dialog));
+  GtkAboutDialog* dialog = GTK_ABOUT_DIALOG(gtk_about_dialog_new());
+  gtk_window_set_icon_from_file(
+      GTK_WINDOW(dialog), DATADIR"/qwertickle.png", &err);
+  gtk_about_dialog_set_authors(dialog, authors);
+  gtk_about_dialog_set_program_name(dialog, PACKAGE_NAME);
+  gtk_about_dialog_set_version(dialog, PACKAGE_VERSION);
+  gtk_about_dialog_set_website(dialog, PACKAGE_URL);
+  gtk_about_dialog_set_copyright(dialog, PACKAGE_COPYRIGHT);
+  gtk_about_dialog_set_license(dialog, PACKAGE_LICENSE);
+  gtk_about_dialog_set_logo(dialog, icon);
+  gtk_about_dialog_set_comments(dialog, PACKAGE_COMMENTS);
+  gtk_dialog_run(GTK_DIALOG(dialog));
+  gtk_widget_destroy(GTK_WIDGET(dialog));
 }
 
 void on_enable_toggled(GtkCheckMenuItem* enable, gpointer data) {
@@ -157,9 +156,9 @@ void on_play_activate(GtkWidget* widget, GdkEventKey* event, gpointer data) {
 
 gboolean gst_bus_callback(GstBus *bus, GstMessage *message, gpointer data) {
   if (GST_MESSAGE_TYPE(message) == GST_MESSAGE_EOS) {
-      gst_element_set_state(GST_ELEMENT(data), GST_STATE_NULL);  
-      gst_object_unref(GST_ELEMENT(data));
-      --count;
+    gst_element_set_state(GST_ELEMENT(data), GST_STATE_NULL);
+    gst_object_unref(GST_ELEMENT(data));
+    --count;
   }
   return TRUE;
 }

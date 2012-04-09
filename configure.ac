@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.65])
-AC_INIT([Qwertickle], [0.1.3], [aitjcize@gmail.com], [qwertickle], [http://github.com/Aitjcize/Qwertickle])
+AC_INIT([Qwertickle], [0.1.4], [aitjcize@gmail.com], [qwertickle], [http://github.com/Aitjcize/Qwertickle])
 AM_INIT_AUTOMAKE([foreign -Wall -Werror])
 AC_CONFIG_SRCDIR([src/qwertickle.c])
 AC_CONFIG_HEADERS([config.h])
@@ -30,6 +30,11 @@ PKG_CHECK_MODULES(XTST, [xtst],,
 	[AC_MSG_ERROR([You need libXTst to build $PACKAGE])]) 
 GUI_CFLAGS="$GUI_CFLAGS $XTST_CFLAGS"
 GUI_LIBS="$GUI_LIBS $XTST_LIBS"
+
+PKG_CHECK_MODULES(X11, [x11],,
+	[AC_MSG_ERROR([You need libXTst to build $PACKAGE])]) 
+GUI_CFLAGS="$GUI_CFLAGS $X11_CFLAGS"
+GUI_LIBS="$GUI_LIBS $X11_LIBS"
 
 AC_SUBST(GUI_LIBS)
 AC_SUBST(GUI_CFLAGS)

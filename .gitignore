@@ -11,6 +11,10 @@ autom4te.cache
 libtool
 mkinstalldirs
 stamp-h1
+install-sh
+depcomp
+missing
+ltmain.sh
 .deps
 .libs
 

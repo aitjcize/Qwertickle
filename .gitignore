@@ -1,0 +1,20 @@
+*.swp
+Makefile
+Makefile.in
+configure
+aclocal.m4
+config.h.in
+config.h
+config.log
+config.status
+autom4te.cache
+libtool
+mkinstalldirs
+stamp-h1
+.deps
+.libs
+
+# intermediate files
+*.o
+*.lo
+*.la
